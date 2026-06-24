@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokéNumber Guess</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <div class="topbar">
+        <div>
+          <p class="eyebrow">Pokédex Quiz</p>
+          <h1>PokéNumber Guess</h1>
+        </div>
+        <div class="scorebox">
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </div>
+      </div>
+
+      <div id="startScreen" class="screen active">
+        <p class="intro">Guess the Pokémon name from a random Pokédex number between <b>#0001</b> and <b>#1025</b>.</p>
+        <label class="setting">
+          Time per question
+          <select id="timeSelect">
+            <option value="20">Easy - 20 seconds</option>
+            <option value="15" selected>Normal - 15 seconds</option>
+            <option value="10">Hard - 10 seconds</option>
+          </select>
+        </label>
+        <button id="startBtn" class="primary">Start</button>
+      </div>
+
+      <div id="quizScreen" class="screen">
+        <div class="stats">
+          <div>
+            <span>Number</span>
+            <strong id="dexNumber">#0000</strong>
+          </div>
+          <div>
+            <span>Time</span>
+            <strong id="timer">15</strong>
+          </div>
+        </div>
+
+        <div class="numberPanel">
+          <p>Who is this Pokémon?</p>
+          <div id="bigNumber">#0000</div>
+        </div>
+
+        <form id="answerForm" class="answerBox">
+          <input id="answerInput" type="text" placeholder="Type English name, e.g. Pikachu" autocomplete="off" />
+          <button class="primary" type="submit">Answer</button>
+        </form>
+
+        <div class="hintArea">
+          <button id="hintBtn" class="secondary" type="button">Use Hint</button>
+          <p id="hintText"></p>
+        </div>
+      </div>
+
+      <div id="resultScreen" class="screen">
+        <p id="resultText" class="resultText"></p>
+        <img id="pokemonImage" class="pokemonImage" alt="Pokémon artwork" />
+        <div class="names">
+          <p><span>English</span><strong id="englishName">-</strong></p>
+          <p><span>Japanese</span><strong id="japaneseName">-</strong></p>
+        </div>
+        <button id="nextBtn" class="primary">Next Pokémon</button>
+      </div>
+
+      <p id="status" class="status"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
